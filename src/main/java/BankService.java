@@ -15,15 +15,18 @@ public class BankService {
      * A constructor to build a BankService object that will start the bank balance at 0. There is no need to change
      * anything in this constructor.
      */
+    private boolean positive = true;
+    
     public BankService(){
         this.balance = 0;
     }
+    
     /**
      * TODO: implement functionality to increase the user's balance by amount.
      * @param amount the amount to be deposited.
      */
     public void deposit(double amount){
-
+        balance = balance + amount;
     }
 
     /**
@@ -32,7 +35,7 @@ public class BankService {
      * @param amount the amount to be withdrawn.
      */
     public void withdraw(double amount){
-
+        balance = balance - amount;
     }
 
     /**
@@ -41,5 +44,15 @@ public class BankService {
      */
     public double getBalance(){
         return 0;
+    }
+
+    public boolean isPositive() {
+        if (balance > 0) {
+            positive = true;
+        }
+        else {
+            positive = false;
+        }
+        return positive;
     }
 }
